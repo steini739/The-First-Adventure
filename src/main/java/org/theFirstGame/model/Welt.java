@@ -11,6 +11,7 @@ public class Welt {
 	private int weltLaenge = 800;
 
 	public Welt() {
+		spieler = new Spieler();
 		gegner = new ArrayList<Gegner>();
 		gegnerSpawnen();
 	}
@@ -31,8 +32,11 @@ public class Welt {
 		return gegner;
 	}
 
+	public Spieler getSpieler() {
+		return spieler;
+	}
+	
 	public int getWeltLaenge() {
 		return weltLaenge;
 	}
-	
 }
