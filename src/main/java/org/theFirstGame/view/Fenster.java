@@ -18,4 +18,8 @@ public class Fenster extends JFrame {
 		setSize(800, 500);
 		setVisible(true);
 	}
+	
+	public void repaintSpielPanel() {
+		spielpanel.repaint();
+	}
 }

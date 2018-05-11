@@ -9,7 +9,8 @@ public class Start {
 	public static void main(String[] args) {
 		Welt welt = new Welt();
 		Fenster fenster = new Fenster(welt);
-		Controller controller = new Controller(fenster);
+		Controller controller = new Controller(fenster, welt);
 		controller.initialisiereListener();
+		controller.spielStarten();
 	}
 }
