@@ -10,7 +10,7 @@ public class Spielpanel extends JPanel {
 
 	private Welt welt;
 
-	private static final int spielerXPosition = 50;
+	public static final int spielerXPosition = 50;
 	private static final int spielerYPositionAufDemBoden = 300;
 	private static final int spielerYPositionImSprung = 200;
 
