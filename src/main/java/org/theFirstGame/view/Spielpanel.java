@@ -24,6 +24,6 @@ public class Spielpanel extends JPanel {
 
 	private void komponenetenMalen(Graphics g) {
 		g.drawLine(1, 350, 800, 350);
-		g.drawRect(spielerXPosition, 350, 50, -50);
+		g.drawRect(spielerXPosition, 300, 50, 50);
 	}
 }
