@@ -15,6 +15,10 @@ public class Gegner {
 	public int getxPosition() {
 		return xPosition;
 	}
+
+	public int getyPosition() {
+		return 250;
+	}
 	
 	
 }

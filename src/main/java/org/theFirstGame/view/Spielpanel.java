@@ -10,9 +10,8 @@ public class Spielpanel extends JPanel {
 
 	private Welt welt;
 
+	public static final int spielerStandardYPosition = 300;
 	public static final int spielerXPosition = 50;
-	private static final int spielerYPositionAufDemBoden = 300;
-	private static final int spielerYPositionImSprung = 200;
 
 	public Spielpanel(Welt welt) {
 		this.welt = welt;
@@ -26,15 +25,10 @@ public class Spielpanel extends JPanel {
 
 	private void komponenetenMalen(Graphics g) {
 		g.drawLine(1, 350, welt.getWeltLaenge(), 350);
-		g.drawRect(spielerXPosition, 350, 50, -50);
 		for (int i = 0; i < welt.getGegner().size(); i++) {
-			g.drawRect(welt.getGegner().get(i).getxPosition(), 350, 50, -50);
+			g.drawRect(welt.getGegner().get(i).getxPosition(), 350, 10, -50);
 		}
-		
-		if (welt.getSpieler().springt()) {
-			g.drawRect(spielerXPosition, spielerYPositionImSprung, 50, 50);
-		} else {
-			g.drawRect(spielerXPosition, spielerYPositionAufDemBoden, 50, 50);
-		}
+
+		g.drawRect(spielerXPosition, welt.getSpieler().getyPosition(), 50, 50);
 	}
 }

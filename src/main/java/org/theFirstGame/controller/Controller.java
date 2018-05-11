@@ -51,6 +51,7 @@ public class Controller {
 	private void tickBerechnen() {
 		fenster.repaintSpielPanel();
 		welt.gegnerBewegen();
+		welt.getSpieler().springen();
 		if(gegnerBeruehrt()){
 			System.out.println("GAME OVER");
 		}
@@ -58,7 +59,8 @@ public class Controller {
 
 	private boolean gegnerBeruehrt() {
 		for (int i = 0; i < welt.getGegner().size(); i++) {
-			if (Spielpanel.spielerXPosition == welt.getGegner().get(i).getxPosition()) {
+			if (Spielpanel.spielerXPosition == welt.getGegner().get(i).getxPosition() &&
+					welt.getSpieler().getyPosition() > welt.getGegner().get(i).getyPosition()) {
 				return true;
 			}
 		}
@@ -73,7 +75,7 @@ public class Controller {
 	public void verarbeiteSpielerAktion(SpielerAktionen spielerAktion) {
 		switch (spielerAktion) {
 		case SPRINGEN:
-			// TODO aktionen hinzufügen
+			welt.getSpieler().starteSpringen();
 			break;
 
 		default:
