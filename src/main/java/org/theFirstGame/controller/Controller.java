@@ -15,7 +15,9 @@ public class Controller {
 	Welt welt;
 
 	private Timer t;
-	private int delay = 40;
+	private Timer gegnerSpawntimer;
+	private int delay = 4;
+	private int gegnerSpawnDelay = 2000;
 	
 	public Controller(Fenster fenster, Welt welt) {
 		this.fenster = fenster;
@@ -28,12 +30,26 @@ public class Controller {
 			public void actionPerformed(ActionEvent e) {
 				tickBerechnen();
 			}
+		
 		});
 		t.start();
+		gegnerStarten();
+	}
+
+	public void gegnerStarten() {
+		gegnerSpawntimer = new Timer(gegnerSpawnDelay, new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				welt.gegnerSpawnen();
+			}
+			
+		});
+		gegnerSpawntimer.start();
 	}
 	
 	private void tickBerechnen() {
 		fenster.repaintSpielPanel();
+		welt.gegnerBewegen();
 	}
 	
 	public void initialisiereListener() {

@@ -22,7 +22,7 @@ public class Welt {
 	}
 	
 	public void gegnerBewegen() {
-		for (int i = 0;i <= gegner.size(); i++)
+		for (int i = 0;i < gegner.size(); i++)
 		{
 			gegner.get(i).nachLinksBewegen();
 		}

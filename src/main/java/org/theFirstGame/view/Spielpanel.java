@@ -22,7 +22,6 @@ public class Spielpanel extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		komponenetenMalen(g);
-		System.out.println("Test");
 	}
 
 	private void komponenetenMalen(Graphics g) {
