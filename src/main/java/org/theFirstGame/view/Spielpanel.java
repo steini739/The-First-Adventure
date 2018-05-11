@@ -23,7 +23,11 @@ public class Spielpanel extends JPanel {
 	}
 
 	private void komponenetenMalen(Graphics g) {
-		g.drawLine(1, 350, 800, 350);
+		g.drawLine(1, 350, welt.getWeltLaenge(), 350);
 		g.drawRect(spielerXPosition, 350, 50, -50);
+		for(int i=0;i < welt.getGegner().size(); i++)
+		{
+			g.drawRect(welt.getGegner().get(i).getxPosition(), 350, 50, -50);
+		}
 	}
 }
