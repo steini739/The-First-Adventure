@@ -30,12 +30,12 @@ public class Spielpanel extends JPanel {
 		g.drawRect(spielerXPosition, 350, 50, -50);
 		for (int i = 0; i < welt.getGegner().size(); i++) {
 			g.drawRect(welt.getGegner().get(i).getxPosition(), 350, 50, -50);
-
-			if (welt.getSpieler().springt()) {
-				g.drawRect(spielerXPosition, spielerYPositionImSprung, 50, 50);
-			} else {
-				g.drawRect(spielerXPosition, spielerYPositionAufDemBoden, 50, 50);
-			}
+		}
+		
+		if (welt.getSpieler().springt()) {
+			g.drawRect(spielerXPosition, spielerYPositionImSprung, 50, 50);
+		} else {
+			g.drawRect(spielerXPosition, spielerYPositionAufDemBoden, 50, 50);
 		}
 	}
 }
